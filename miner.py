@@ -26,6 +26,7 @@ def send_bytes16(obytes, ser):
 	pretty_hex(obytes)
 	ser.write(bytearray(obytes))
 
+
 def frequency_setting(frequency):
 	buffer = [0x58, 0x09, 0x00, 0x0C, 0x00, 0x50, 0x02, 0x41]   # 250MHz -- osc of 25MHz
 	if frequency < 50:
@@ -57,7 +58,6 @@ def get_response(ser):
 	
 	if (len(list(input_bytes)) > 0):
 		pretty_hex(list(input_bytes))
-
 
 
 if (len(sys.argv) == 2):
